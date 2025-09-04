@@ -1,9 +1,15 @@
 .App {
-  margin: 0 auto;
-  padding: 2.3em 3em 2em;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  border: 2px dashed #888888;
-  border-radius: 30px;
+    margin: 0 auto;
+    padding: 2.3em 3em 2em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border: 2px dashed #888888;
+    border-radius: 30px;
+}
+
+.div1 {
+    background-color: #f5f5f5;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1h38v38H1V1zm1 1v36h36V2H2z' fill='%23e0e0e0' fill-opacity='0.4'/%3E%3C/svg%3E");
+    background-size: 40px 40px;
 }

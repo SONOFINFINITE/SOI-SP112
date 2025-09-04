@@ -1,0 +1,463 @@
+.root {
+    padding: 30px;
+}
+
+/* Медиа-запрос для планшетов */
+@media (max-width: 1280px) {
+    .root {
+        padding: 20px;
+    }
+}
+
+.hero__text {
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: var(--MAIN-THEME-COL);
+    display: block;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+}
+.secondline {
+    color: var(--MAIN-GRAY);
+    height: fit-content;
+    width: fit-content;
+    margin-bottom: -60px; /* Adjust this value as needed */
+}
+@media (max-width: 1750px) {
+    .hero__text {
+        font-size: 96px;
+    }
+    .secondline {
+        font-size: 96px;
+    }
+}
+@media (max-width: 1560px) and (min-width: 1281px) {
+    .hero__text {
+        font-size: 72px;
+    }
+    .secondline {
+        font-size: 72px;
+        margin-bottom: -40px;
+    }
+}
+@media (max-width: 1280px) {
+    .secondline {
+        margin-bottom: -40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .secondline {
+        margin-bottom: -30px;
+    }
+}
+.hero__content {
+    display: flex;
+    flex-direction: column;
+}
+.hero__pic {
+    border-radius: 25px;
+    height: 720px;
+}
+.div1 {
+    background-repeat: no-repeat;
+    background-image: url('../../../public/heropic.jpg');
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-color: transparent;
+    border-radius: 25px;
+    height: 55dvh;
+}
+.div2 {
+    margin-bottom: 30px;
+    font-size: 125px;
+}
+
+@media (max-width: 1280px) {
+    .div2 {
+        font-size: 90px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .div2 {
+        font-size: 60px;
+        margin-bottom: 15px;
+    }
+}
+.p1 {
+    font-weight: 300;
+    width: 450px;
+    font-size: 24px;
+    text-align: justify;
+}
+.alignRight {
+    text-align: right;
+    font-size: 72px;
+}
+@media (max-width: 1750px) {
+    .alignRight {
+        font-size: 20px;
+    }
+}
+@media (max-width: 1560px) {
+    .p1 {
+        font-size: 20px;
+    }
+    .alignRight {
+        font-size: 20px;
+    }
+}
+@media (max-width: 1280px) {
+    .p1 {
+        width: 100%;
+        max-width: 400px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .p1 {
+        font-size: 16px;
+        max-width: 100%;
+    }
+}
+.div3 {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.titleWithCross {
+    position: relative;
+    display: inline-block;
+}
+
+@media (max-width: 1280px) {
+    .div3 {
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .div3 {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+}
+.div4 {
+    font-size: 36px;
+    height: fit-content;
+}
+
+.medCrossContainer {
+    position: absolute;
+    top: -140px;
+    right: -70px;
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+    animation: float 4s ease-in-out infinite;
+}
+
+.medCross {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(29, 78, 216, 0.5)) brightness(0.4) saturate(4.5);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+    50% {
+        transform: translateY(0px) rotate(10deg);
+    }
+    75% {
+        transform: translateY(15px) rotate(5deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+@media (max-width: 1750px) {
+    .medCrossContainer {
+        width: 140px;
+        height: 140px;
+        right: -20px;
+        top: -100px;
+    }
+}
+
+@media (max-width: 1560px) {
+    .medCrossContainer {
+        width: 120px;
+        height: 120px;
+        right: -20px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .medCrossContainer {
+        width: 100px;
+        height: 100px;
+        right: -100px;
+        top: -10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .medCrossContainer {
+        display: none;
+    }
+}
+.div5 {
+    display: flex;
+    justify-content: space-between;
+    row-gap: 10px;
+    column-gap: 20px;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    max-width: 100%;
+}
+
+@media (max-width: 1280px) {
+    .div5 {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .div5 {
+        gap: 15px;
+        width: 100%;
+    }
+}
+.header1 {
+    font-weight: 900;
+    color: var(--MAIN-GRAY);
+    font-size: 56px;
+    white-space: nowrap;
+}
+
+@media (max-width: 1280px) {
+    .header1 {
+        font-size: 40px;
+        white-space: normal;
+    }
+}
+
+@media (max-width: 768px) {
+    .header1 {
+        font-size: 28px;
+    }
+}
+.button1 {
+    padding: 15px;
+    color: var(--MAIN-WHITE);
+    background-color: #1d4ed8;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 20px;
+    column-gap: 10px;
+    font-weight: 300;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    
+    &:not(.transparentButton):hover {
+        transform: translateY(-3px);
+        background-color: #1e40af; /* Slightly darker blue */
+        box-shadow: 0 0 15px rgba(29, 78, 216, 0.5);
+    }
+}
+@media (max-width: 1560px) {
+    .button1 {
+        font-size: 18px;
+        padding: 14px;
+    }
+}
+@media (max-width: 1380px) {
+    .button1 {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+@media (max-width: 1280px) {
+    .button1 {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .button1 {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+.transparentButton {
+    background-color: transparent;
+    border: 1px solid #1d4ed8;
+
+    position: relative;
+    overflow: hidden;
+    animation: pulse-button 2s infinite;
+}
+
+.transparentButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    /* Удаляем анимацию pulse, чтобы избежать конфликта */
+}
+
+@keyframes pulse-button {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(29, 78, 216, 0.7);
+    }
+    70% {
+        transform: scale(1.02);
+        box-shadow: 0 0 0 10px rgba(29, 78, 216, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(29, 78, 216, 0);
+    }
+}
+
+.phoneIcon {
+    color: #1d4ed8;
+    font-size: 24px; /* Adjust as needed */
+}
+
+.alignRight {
+    text-align: right;
+    font-size: 72px;
+}
+@media (max-width: 1750px) {
+    .alignRight {
+        font-size: 56px;
+    }
+}
+@media (max-width: 1560px) {
+    .alignRight {
+        font-size: 48px;
+    }
+}
+@media (max-width: 1380px) {
+    .alignRight {
+        font-size: 40px;
+    }
+}
+@media (max-width: 1280px) {
+    .alignRight {
+        text-align: left;
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .alignRight {
+        font-size: 32px;
+    }
+}
+.div6 {
+    display: flex;
+    gap: 15px;
+}
+
+@media (max-width: 1280px) {
+    .div6 {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .div6 .button1 {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.p2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+@media (max-width: 1280px) {
+    .p2 {
+        font-size: 16px;
+    }
+}
+@media (max-width: 840px) {
+    .p2 {
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    .p2 {
+        font-size: 12px;
+    }
+}
+.div7 {
+    display: flex;
+    align-content: center;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+}
+.div8 {
+    width: 10px;
+    height: 10px;
+    background-color: var(--MAIN-THEME-COL);
+    border-radius: 50px;
+}
+.div9 {
+    display: flex;
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .div9 {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+.grey {
+    background-color: var(--MAIN-GRAY);
+}
+.header2 {
+    color: var(--MAIN-THEME-COL);
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+}
+
+.svg1 {
+    width: 30px;
+    height: 30px;
+}

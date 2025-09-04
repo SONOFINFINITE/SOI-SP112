@@ -1,0 +1,264 @@
+.eq__section {
+    width: 100%;
+    max-width: 1856px;
+    margin: 0px auto;
+    position: relative;
+    height: fit-content;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.eq_slider-wrapper {
+    width: 100%;
+    height: 60dvh;
+    overflow: hidden;
+    position: relative;
+    border-radius: 17px;
+}
+
+.slider__container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slider__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    z-index: 1;
+}
+
+.slider__slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.slider__img {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-color: transparent;
+    padding: 30px;
+    position: relative;
+}
+
+.slider__img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65); /* Затемняющий оверлей 65% */
+    z-index: 1;
+}
+
+.slider__overlay {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2; /* Поверх затемняющего оверлея */
+}
+
+.eq__section-heading {
+    font-size: 64px;
+    font-weight: 900;
+    color: var(--MAIN-THEME-COL);
+    margin-bottom: 10px;
+}
+
+.eq__section-subheading {
+    font-size: 20px;
+    color: var(--MAIN-BLACK);
+    font-weight: 400;
+    margin-top: -20px;
+    font-weight: 500;
+}
+@media (max-width: 1280px) {
+    .eq__section-heading {
+        margin-top: 0;
+    }
+}
+
+.eq__section-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100%;
+    position: relative;
+    z-index: 2; /* Поверх затемняющего оверлея */
+}
+
+.eq__slider-content-wrapper {
+    margin-bottom: 20px;
+}
+
+.header1 {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--MAIN-WHITE);
+    margin-bottom: 10px;
+}
+
+.slide_subheading {
+    font-size: 24px;
+    color: var(--MAIN-WHITE);
+    font-weight: 300;
+}
+
+/* Стили для навигационных стрелок */
+.slider__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: var(--MAIN-WHITE);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.slider__arrow:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.slider__arrow_prev {
+    left: 20px;
+}
+
+.slider__arrow_next {
+    right: 20px;
+}
+
+/* Стили для индикаторов слайдов */
+.slider__indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.slider__indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    border: none;
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.slider__indicator.active {
+    background-color: var(--MAIN-WHITE);
+    transform: scale(1.2);
+}
+
+/* Адаптивный дизайн для планшетов */
+@media (max-width: 1280px) {
+    .eq__section {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 20px;
+    }
+
+    .slider__img {
+        padding: 20px;
+    }
+
+    .eq__section-heading {
+        font-size: 48px;
+    }
+
+    .eq__section-subheading {
+        font-size: 18px;
+        margin-top: 0;
+    }
+
+    .header1 {
+        font-size: 36px;
+    }
+
+    .slide_subheading {
+        font-size: 20px;
+    }
+
+    .slider__arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
+
+/* Адаптивный дизайн для мобильных устройств */
+@media (max-width: 768px) {
+
+    .slider__img {
+        padding: 15px;
+    }
+
+    .eq__section-heading {
+        font-size: 32px;
+    }
+
+    .eq__section-subheading {
+        font-size: 16px;
+        margin-top: 0;
+    }
+
+    .header1 {
+        font-size: 22px;
+    }
+
+    .slide_subheading {
+        font-size: 16px;
+    }
+
+    .slider__arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .slider__arrow_prev {
+        left: 10px;
+    }
+
+    .slider__arrow_next {
+        right: 10px;
+    }
+
+    .slider__indicators {
+        bottom: 10px;
+    }
+
+    .slider__indicator {
+        width: 8px;
+        height: 8px;
+    }
+}
+.div1 {
+    margin-bottom: 20px;
+}
