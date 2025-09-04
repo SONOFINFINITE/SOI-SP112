@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import styles from './hero.module.scss';
+import heroCross from '../../assets/HERO_CROSS.png';
 
 export interface HeroProps {
     className?: string;
@@ -29,7 +30,7 @@ export const Hero = ({ className }: HeroProps) => {
                         <div className={styles.titleWithCross}>
                             <h2 className={styles.hero__text}> СКОРАЯ ПОМОЩЬ</h2>
                             <div className={styles.medCrossContainer}>
-                                <img src="../../assets/HERO_CROSS.png" alt="3D Medical Cross" className={styles.medCross} />
+                                <img src={heroCross} alt="3D Medical Cross" className={styles.medCross} />
                             </div>
                         </div>
                         <div className={styles.div4}>
