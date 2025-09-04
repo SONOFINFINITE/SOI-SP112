@@ -29,7 +29,7 @@ export const Hero = ({ className }: HeroProps) => {
                         <div className={styles.titleWithCross}>
                             <h2 className={styles.hero__text}> СКОРАЯ ПОМОЩЬ</h2>
                             <div className={styles.medCrossContainer}>
-                                <img src="/src/assets/3d cross.png" alt="3D Medical Cross" className={styles.medCross} />
+                                <img src="/src/assets/HERO_CROSS.png" alt="3D Medical Cross" className={styles.medCross} />
                             </div>
                         </div>
                         <div className={styles.div4}>
