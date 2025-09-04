@@ -1,7 +1,7 @@
 import { createBoard } from '@wixc3/react-board';
-import { EquipSlider } from '../../../components/equip-slider/equip-slider';
+import { Equip } from '../../../components/equip/equip';
 
 export default createBoard({
     name: 'EquipSlider',
-    Board: () => <EquipSlider />
+    Board: () => <Equip />
 });
