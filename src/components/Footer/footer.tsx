@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { FiPhone, FiMail, FiMapPin, FiClock } from 'react-icons/fi';
 import styles from './footer.module.scss';
 import { scrollToElement } from '../../utils/gsapUtils';
+import LOGO from '../../assets/LOGO_W.png'
 
 export interface FooterProps {
     className?: string;
@@ -51,7 +52,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                 <div className={styles.footer__left}>
                     <div className={styles.footer__logo}>
                         <a href="/" className={styles.footer__logoLink}>
-                            LOGO
+                            <img src={LOGO} alt="logo" className={styles.footer__logo} />
                         </a>
                     </div>
                     <div className={styles.footer__description}>
@@ -71,7 +72,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                             <span className={styles.contact__icon}>
                                 <FiMapPin />
                             </span>
-                            г. Москва, ул. Примерная, 1
+                            г. Москва, станция метро "Дубровка"
                         </p>
                         <p className={styles.contact__email}>
                             <span className={styles.contact__icon}>
@@ -90,7 +91,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
             </div>
             <div className={styles.footer__bottom}>
                 <div className={styles.footer__copyright}>
-                    <p>Частная скорая помощь © {new Date().getFullYear()}</p>
+                    <p>MED PRIME © {new Date().getFullYear()}</p>
                 </div>
             </div>
         </footer>

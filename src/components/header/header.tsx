@@ -3,6 +3,7 @@ import styles from './header.module.scss';
 import { useState, useEffect } from 'react';
 import { DrawerMenu } from '../Drawer/drawer-menu';
 import { scrollToElement } from '../../utils/gsapUtils';
+import LOGO from '../../assets/LOGO.png'
 
 export interface HeaderProps {
     className?: string;
@@ -21,7 +22,7 @@ export const Header = ({ className }: HeaderProps) => {
 
     return (
         <div className={classNames(styles.header__wrapper, className)}>
-            <h1 className={styles.header__logo}>LOGO</h1>
+          <img src={LOGO} alt="logo" className={styles.header__logo} />
             <ul className={styles.header_navlist}>
                 <li>
                     <a href="#services" onClick={(e) => {

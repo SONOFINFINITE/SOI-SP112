@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import styles from './drawer-menu.module.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { scrollToElement } from '../../utils/gsapUtils';
+import LOGO from '../../assets/LOGO.png'
 
 export interface DrawerMenuProps {
     isOpen: boolean;
@@ -63,7 +64,7 @@ export const DrawerMenu: React.FC<DrawerMenuProps> = ({ isOpen, onClose }) => {
             <div className={styles.drawer__content}>
                 <div className={styles.drawer__header}>
                     <div className={styles.drawer__logo}>
-                        LOGO
+                     <img src={LOGO} alt="logo" className={styles.drawer__logo} />
                     </div>
                     <button className={styles.drawer__close} onClick={onClose} aria-label="Close menu">
                         <svg
