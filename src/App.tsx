@@ -173,7 +173,7 @@ const App: React.FC = () => {
             </AnimateOnScroll>
             
             <Footer />
-            <WhatsAppWidget phoneNumber="+79999999999" />
+            <WhatsAppWidget phoneNumber="+79283001946" />
         </div>
     );
 };

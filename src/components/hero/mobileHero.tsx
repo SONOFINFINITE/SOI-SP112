@@ -45,7 +45,7 @@ export const MobileHero = ({ className }: MobileHeroProps) => {
                     </div>
                     <div className={styles.div5}>
                         <div className={styles.div6} ref={buttonsRef}>
-                            <a href="https://wa.me/79999999999" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                            <a href="https://wa.me/+79283001946" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                                 <button className={styles.button1}>
                                     ОФОРМИТЬ ПЕРЕВОЗКУ
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,7 +53,7 @@ export const MobileHero = ({ className }: MobileHeroProps) => {
                                     </svg>
                                 </button>
                             </a>
-                            <a href="tel:+79999999999" style={{ textDecoration: 'none' }}>
+                            <a href="tel:+79283001946" style={{ textDecoration: 'none' }}>
                                 <button className={classNames(styles.button1, styles.transparentButton)}>
                                     <h2 className={styles.header2}>ПОЗВОНИТЬ СЕЙЧАС</h2>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

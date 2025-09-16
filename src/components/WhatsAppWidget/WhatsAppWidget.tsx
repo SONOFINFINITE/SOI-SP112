@@ -26,11 +26,11 @@ export const WhatsAppWidget: React.FC<WhatsAppWidgetProps> = ({
     }, []);
 
     const handleWhatsAppClick = () => {
-        window.open(`https://wa.me/${phoneNumber.replace(/\D/g, '')}`, '_blank');
+        window.open(`https://wa.me/${phoneNumber}`, '_blank');
     };
 
     const handlePhoneClick = () => {
-        window.location.href = `tel:${phoneNumber.replace(/\D/g, '')}`;
+        window.location.href = `tel:${phoneNumber}`;
     };
 
     return (
