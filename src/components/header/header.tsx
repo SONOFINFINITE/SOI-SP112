@@ -61,7 +61,7 @@ export const Header = ({ className }: HeaderProps) => {
                     }}>КОНТАКТЫ</a>
                 </li>
             </ul>
-            <a href="tel:+79999999999" className={classNames(styles['header__cta-btn'], styles['desktop_cta'], styles['phone-container'])} style={{ textDecoration: 'none' }}>
+            <a href="tel:+79283001946" className={classNames(styles['header__cta-btn'], styles['desktop_cta'], styles['phone-container'])} style={{ textDecoration: 'none' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles['phone-icon']}>
                     <path
                         d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
@@ -72,7 +72,7 @@ export const Header = ({ className }: HeaderProps) => {
                     />
                 </svg>
                 <div className={styles['phone-info']}>
-                    <span className={styles['phone-number']}>+7 (999) 999-99-99</span>
+                    <span className={styles['phone-number']}>+7 (928) 300-19-46</span>
                     <span className={styles['phone-text']}>Круглосуточно без выходных</span>
                 </div>
             </a>

@@ -23,7 +23,7 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({ className }) => {
                 </div>
                 <div className={styles.contactContent}>
                   <h3 className={styles.contactLabel}>Телефон:</h3>
-                  <p className={styles.contactValue}>+7 999 999 99 99</p>
+                  <p className={styles.contactValue}>+7 928 300 19 46</p>
                 </div>
               </div>
               
@@ -33,7 +33,7 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({ className }) => {
                 </div>
                 <div className={styles.contactContent}>
                   <h3 className={styles.contactLabel}>E-mail:</h3>
-                  <p className={styles.contactValue}>info@example-ambulance.ru</p>
+                  <p className={styles.contactValue}>mail@medprime24.ru</p>
                 </div>
               </div>
               
@@ -59,14 +59,14 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({ className }) => {
             </div>
             
             <div className={styles.contactButtons}>
-              <a href="tel:+79999999999" style={{ textDecoration: 'none' }}>
+              <a href="tel:+79283001946" style={{ textDecoration: 'none' }}>
                 <button className={`${styles.contactButton} ${styles.callButton}`}>
                   <FiPhone className={styles.buttonIcon} />
                   <span>Позвонить сейчас</span>
                 </button>
               </a>
               <a
-                href="https://wa.me/79999999999"
+                href="https://wa.me/+79283001946"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ textDecoration: 'none' }}

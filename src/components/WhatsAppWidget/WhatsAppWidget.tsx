@@ -7,7 +7,7 @@ export interface WhatsAppWidgetProps {
 }
 
 export const WhatsAppWidget: React.FC<WhatsAppWidgetProps> = ({ 
-    phoneNumber = '+79999999999',
+    phoneNumber = '+79283001946',
     className 
 }) => {
     const [isMobile, setIsMobile] = useState(false);
