@@ -3,9 +3,9 @@ import styles from './equip.module.scss';
 import { useState, useEffect, useCallback } from 'react';
 
 // Импортируем изображения
-import OSN_01 from '../../assets/OSN_01.jpg';
+import OSN_01 from '../../assets/OSN_01.webp';
 import OSN_02 from '../../assets/OSN_02.webp';
-import OSN_03 from '../../assets/OSN_03.jpg';
+import OSN_03 from '../../assets/OSN_03.webp';
 
 export interface EquipProps {
     className?: string;

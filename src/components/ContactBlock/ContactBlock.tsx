@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ContactBlock.module.scss';
-import CONTACT_MAP from '../../assets/CONTACT_MAP.png';
+import CONTACT_MAP from '../../assets/CONTACT_MAP.webp';
 import { FiPhone, FiMail, FiMapPin, FiClock } from 'react-icons/fi';
 
 export interface ContactBlockProps {

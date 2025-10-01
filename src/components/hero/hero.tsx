@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import styles from './hero.module.scss';
-import heroCross from '../../assets/HERO_CROSS.png';
+import heroCross from '../../assets/HERO_CROSS.webp';
 
 export interface HeroProps {
     className?: string;

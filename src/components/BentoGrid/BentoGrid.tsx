@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './BentoGrid.module.scss';
-import BENTO_01 from '../../assets/BENTO_01.png';
-import BENTO_02 from '../../assets/BENTO_02.jpg';
-import BENTO_03 from '../../assets/BENTO_03.jpg';
-import BENTO_04 from '../../assets/BENTO_04.jpg';
-import BENTO_05 from '../../assets/BENTO_05.jpg';
-import BENTO_06 from '../../assets/BENTO_06.jpeg';
+import BENTO_01 from '../../assets/BENTO_01.webp';
+import BENTO_02 from '../../assets/BENTO_02.webp';
+import BENTO_03 from '../../assets/BENTO_03.webp';
+import BENTO_04 from '../../assets/BENTO_04.webp';
+import BENTO_05 from '../../assets/BENTO_05.webp';
+import BENTO_06 from '../../assets/BENTO_06.webp';
 
 interface ServiceItem {
   id: number;

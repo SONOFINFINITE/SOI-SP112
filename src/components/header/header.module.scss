@@ -23,16 +23,10 @@
     .header__wrapper {
         padding-left: 15px;
         padding-right: 15px;
-        position: relative;
     }
 }
 .header__logo {
     height: 80px;
-    font-size: 48px;
-    font-weight: 900;
-    width: fit-content;
-    color: var(--MAIN-THEME-COL);
-    letter-spacing: -1px;
     
 }
 @media (max-width: 1380px) {
@@ -55,6 +49,8 @@
 }
 @media (max-width: 480px) {
     .header__logo {
+        width: 100%;
+        max-width: 120px;
         height: 50px;
     }
 }
