@@ -71,7 +71,7 @@ export const TariffBlock: React.FC<TariffBlockProps> = ({ className }) => {
     const moscowTariffs = [
         {
             title: 'Стандарт',
-            subtitle: 'Фельдшерская бригада',
+            subtitle: 'Бригада врачей',
             price: 'от 3 900 ₽',
             features: [
                 'Подача по городу',
@@ -81,7 +81,7 @@ export const TariffBlock: React.FC<TariffBlockProps> = ({ className }) => {
         },
         {
             title: 'Комфорт',
-            subtitle: 'Врач + фельдшер',
+            subtitle: 'Врач',
             price: 'от 5 900 ₽',
             features: [
                 'Подача по городу',

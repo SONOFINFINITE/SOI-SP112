@@ -39,7 +39,7 @@ export const MobileHero = ({ className }: MobileHeroProps) => {
                         </div>
                         <div className={styles.div4}>
                             <p className={styles.p1}>
-                                Бригады врачей и фельдшеров, реанимобили, кислород, мониторинг. Быстро, безопасно и официально.
+                                Бригады врачей, реанимобили, кислород, мониторинг. Быстро, безопасно и официально.
                             </p>
                         </div>
                     </div>

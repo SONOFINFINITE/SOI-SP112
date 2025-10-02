@@ -171,8 +171,8 @@ export const DrawerMenu: React.FC<DrawerMenuProps> = ({ isOpen, onClose }) => {
                                     />
                                 </svg>
                                 <div className={styles['contact-content__wrapper']}>
-                                    <a href="tel:+79999999999" className={styles.drawer__phone}>
-                                    +7 999 999 99 99
+                                    <a href="tel:+79283001946" className={styles.drawer__phone}>
+                                    +7 (928) 300 19 46
                                     </a>
                                     <p className={styles.p1}>круглосуточно, без выходных</p>
                                 </div>

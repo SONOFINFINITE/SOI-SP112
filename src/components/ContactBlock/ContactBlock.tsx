@@ -43,7 +43,7 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({ className }) => {
                 </div>
                 <div className={styles.contactContent}>
                   <h3 className={styles.contactLabel}>Адрес офиса:</h3>
-                  <p className={styles.contactValue}>г. Москва, станция метро "Дубровка"</p>
+                  <p className={styles.contactValue}>г. Москва, станция метро "Нагатинский затон"</p>
                 </div>
               </div>
               
@@ -103,7 +103,7 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({ className }) => {
             </div>
             <div className={styles.mapInfo}>
               <h3 className={styles.mapTitle}>Наш офис</h3>
-              <p className={styles.mapAddress}>г. Москва, станция метро "Дубровка"</p>
+              <p className={styles.mapAddress}>г. Москва, станция метро "Нагатинский затон"</p>
             </div>
           </div>
           <img src={CONTACT_MAP} alt="Карта расположения офиса" className={styles.mapImage} />

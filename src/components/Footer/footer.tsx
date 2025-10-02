@@ -72,7 +72,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                             <span className={styles.contact__icon}>
                                 <FiMapPin />
                             </span>
-                            г. Москва, станция метро "Дубровка"
+                            г. Москва, станция метро "Нагатинский затон"
                         </p>
                         <p className={styles.contact__email}>
                             <span className={styles.contact__icon}>

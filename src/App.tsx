@@ -12,6 +12,7 @@ import { Equip } from './components/equip/equip';
 import { Faq } from './components/faq/faq';
 import { RequestFormBlock } from './components/RequestFormBlock/RequestFormBlock';
 import { ContactBlock } from './components/ContactBlock/ContactBlock';
+import { TransportBlock } from './components/TransportBlock/TransportBlock';
 import { Footer } from './components/Footer/footer';
 import { WhatsAppWidget } from './components/WhatsAppWidget/WhatsAppWidget';
 import { gsap } from 'gsap';
@@ -116,6 +117,7 @@ const App: React.FC = () => {
             '.testimonialsMarquee',
             '.requestFormBlock',
             '.contactBlock',
+            '.transportBlock',
             '.faq'
         ];
 
@@ -166,6 +168,10 @@ const App: React.FC = () => {
             
             <AnimateOnScroll className="contactBlock">
                 <ContactBlock />
+            </AnimateOnScroll>
+            
+            <AnimateOnScroll className="transportBlock">
+                <TransportBlock />
             </AnimateOnScroll>
             
             <AnimateOnScroll className="faq">
