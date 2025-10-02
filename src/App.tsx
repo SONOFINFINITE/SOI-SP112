@@ -149,6 +149,10 @@ const App: React.FC = () => {
             <AnimateOnScroll className="bentoGrid">
                 <BentoGrid />
             </AnimateOnScroll>
+                        
+            <AnimateOnScroll className="transportBlock">
+                <TransportBlock />
+            </AnimateOnScroll>
             
             <AnimateOnScroll className="advantagesBlock">
                 <AdvantagesBlock />
@@ -169,11 +173,7 @@ const App: React.FC = () => {
             <AnimateOnScroll className="contactBlock">
                 <ContactBlock />
             </AnimateOnScroll>
-            
-            <AnimateOnScroll className="transportBlock">
-                <TransportBlock />
-            </AnimateOnScroll>
-            
+        
             <AnimateOnScroll className="faq">
                 <Faq />
             </AnimateOnScroll>
