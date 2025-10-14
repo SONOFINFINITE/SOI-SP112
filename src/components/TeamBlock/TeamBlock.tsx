@@ -12,8 +12,6 @@ interface TeamBlockProps {
 const TeamBlock: React.FC<TeamBlockProps> = ({
   title = 'Наша команда',
   subtitle = 'Профессионализм и забота',
-  description = 'Наша профессиональная команда обеспечит вашу безопасную и комфортную поездку до нужной точки. Все условия соблюдены для вашего удобства.',
-  imageSrc = '/public/TEAM.jpg',
   imageAlt = 'Команда профессионалов',
 }) => {
   return (
