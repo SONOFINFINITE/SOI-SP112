@@ -30,7 +30,7 @@ const TeamBlock: React.FC<TeamBlockProps> = ({
         </div>
       </div>
       <div className={styles.imageContent}>
-        <img src='/public/TEAM.jpg' alt={imageAlt} className={styles.teamImage} />
+        <img src='/TEAM.jpg' alt={imageAlt} className={styles.teamImage} />
       </div>
     </section>
   );
