@@ -25,12 +25,6 @@ export const Header = ({ className }: HeaderProps) => {
           <img src={LOGO} alt="logo" className={styles.header__logo} />
             <ul className={styles.header_navlist}>
                 <li>
-                    <a href="#services" onClick={(e) => {
-                        e.preventDefault();
-                        scrollToElement('#services', 1, 0);
-                    }}>УСЛУГИ</a>
-                </li>
-                <li>
                     <a href="#benefits" onClick={(e) => {
                         e.preventDefault();
                         scrollToElement('#benefits', 1, 0);
@@ -41,12 +35,6 @@ export const Header = ({ className }: HeaderProps) => {
                         e.preventDefault();
                         scrollToElement('#tariffs', 1, 0);
                     }}>ТАРИФЫ</a>
-                </li>
-                <li>
-                    <a href="#equipment" onClick={(e) => {
-                        e.preventDefault();
-                        scrollToElement('#equipment', 1, 0);
-                    }}>ОСНАЩЕНИЕ</a>
                 </li>
                 <li>
                     <a href="#reviews" onClick={(e) => {

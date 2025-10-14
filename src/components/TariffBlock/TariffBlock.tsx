@@ -70,8 +70,8 @@ export const TariffBlock: React.FC<TariffBlockProps> = ({ className }) => {
     
     const moscowTariffs = [
         {
-            title: 'Стандарт',
-            subtitle: 'Бригада врачей',
+            title: 'Базовый',
+            subtitle: 'Водитель',
             price: 'от 3 900 ₽',
             features: [
                 'Подача по городу',
@@ -81,31 +81,31 @@ export const TariffBlock: React.FC<TariffBlockProps> = ({ className }) => {
         },
         {
             title: 'Комфорт',
-            subtitle: 'Врач',
+            subtitle: 'Водитель + асситент',
             price: 'от 5 900 ₽',
             features: [
                 'Подача по городу',
                 '40 мин работы включено',
-                'Кислород, дефибриллятор'
+                'Носилки, каталка'
             ],
             highlighted: true
         },
         {
-            title: 'Реанимация',
-            subtitle: 'Реаниматолог, анестезиолог',
+            title: 'Дальний',
+            subtitle: 'Водитель + экипаж асситентов',
             price: 'от 9 900 ₽',
             features: [
                 'Подача по городу',
                 '60 мин работы включено',
-                'ИВЛ, дефибриллятор'
+                'Помощь в транспортировке, погрузке'
             ]
         }
     ];
     
     const regionTariffs = [
         {
-            title: 'Стандарт',
-            subtitle: 'Бригада врачей',
+            title: 'Базовый',
+            subtitle: 'Водитель',
             price: 'от 4 900 ₽',
             features: [
                 'Подача по области',
@@ -115,23 +115,23 @@ export const TariffBlock: React.FC<TariffBlockProps> = ({ className }) => {
         },
         {
             title: 'Комфорт',
-            subtitle: 'Врач',
+            subtitle: 'Водитель + асситент',
             price: 'от 7 900 ₽',
             features: [
                 'Подача по области',
                 '40 мин работы включено',
-                'Кислород, дефибриллятор'
+                'Носилки, каталка'
             ],
             highlighted: true
         },
         {
-            title: 'Реанимация',
-            subtitle: 'Реаниматолог, анестезиолог',
+            title: 'Дальний',
+            subtitle: 'Водитель + экипаж асситентов',    
             price: 'от 12 900 ₽',
             features: [
                 'Подача по области',
                 '60 мин работы включено',
-                'ИВЛ, дефибриллятор'
+                'Помощь в транспортировке, погрузке'
             ]
         }
     ];
@@ -142,7 +142,7 @@ export const TariffBlock: React.FC<TariffBlockProps> = ({ className }) => {
         <div className={classNames(styles.container, className)} id="tariffs">
             <div className={styles.header}>
                 <h2 className={styles.title}>Тарифы</h2>
-                <p className={styles.subtitle}>Итоговая цена зависит от класса мед. состава бригады и расстояния.</p>
+                <p className={styles.subtitle}>Итоговая цена зависит от состава экипажа и расстояния.</p>
             </div>
             <RegionSwitch isRegion={isRegion} onChange={setIsRegion} />
             <div className={styles.tariffGrid}>

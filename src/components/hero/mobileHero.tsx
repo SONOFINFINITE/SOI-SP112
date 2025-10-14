@@ -35,11 +35,11 @@ export const MobileHero = ({ className }: MobileHeroProps) => {
                 <div className={styles.div2}>
                     <div className={styles.div3} ref={contentRef}>
                         <div className={styles.titleContainer}>
-                            <h2 className={styles.hero__text}>ЧАСТНАЯ СКОРАЯ ПОМОЩЬ 24/7</h2>
+                            <h2 className={styles.hero__text}>НЕЭКСТРЕННАЯ ПЕРЕВОЗКА ПАЦИЕНТОВ 24/7</h2>
                         </div>
                         <div className={styles.div4}>
                             <p className={styles.p1}>
-                                Бригады врачей, реанимобили, кислород, мониторинг. Быстро, безопасно и официально.
+                              Экипаж: водитель + ассистент, автомобиль для перевозки лежачих пациентов. Быстро, безопасно и официально.
                             </p>
                         </div>
                     </div>

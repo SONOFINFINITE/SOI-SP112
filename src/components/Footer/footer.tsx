@@ -28,16 +28,10 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
             <div className={styles.footer__nav}>
                 <ul className={styles.footer__navlist}>
                     <li>
-                        <a href="#services" onClick={(e) => handleSmoothScroll(e, '#services')}>УСЛУГИ</a>
-                    </li>
-                    <li>
                         <a href="#benefits" onClick={(e) => handleSmoothScroll(e, '#benefits')}>ПРЕИМУЩЕСТВА</a>
                     </li>
                     <li>
                         <a href="#tariffs" onClick={(e) => handleSmoothScroll(e, '#tariffs')}>ТАРИФЫ</a>
-                    </li>
-                    <li>
-                        <a href="#autopark" onClick={(e) => handleSmoothScroll(e, '#equipment')}>ОСНАЩЕНИЕ</a>
                     </li>
                     <li>
                         <a href="#reviews" onClick={(e) => handleSmoothScroll(e, '#reviews')}>ОТЗЫВЫ</a>
@@ -56,7 +50,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                         </a>
                     </div>
                     <div className={styles.footer__description}>
-                        Платные услуги скорой помощи и перевозка пациентов. Работаем 24/7.
+                        Мы не являемся медицинской организацией и не оказываем медицинские услуги.
                     </div>
                     <div className={styles.footer__social}>
                         <a href="https://wa.me/+79283001946" target="_blank" rel="noopener noreferrer" className={styles.social__link}>

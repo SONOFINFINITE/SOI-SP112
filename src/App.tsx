@@ -13,6 +13,7 @@ import { Faq } from './components/faq/faq';
 import { RequestFormBlock } from './components/RequestFormBlock/RequestFormBlock';
 import { ContactBlock } from './components/ContactBlock/ContactBlock';
 import { TransportBlock } from './components/TransportBlock/TransportBlock';
+import TeamBlock from './components/TeamBlock';
 import { Footer } from './components/Footer/footer';
 import { WhatsAppWidget } from './components/WhatsAppWidget/WhatsAppWidget';
 import { gsap } from 'gsap';
@@ -118,6 +119,7 @@ const App: React.FC = () => {
             '.requestFormBlock',
             '.contactBlock',
             '.transportBlock',
+            '.teamBlock',
             '.faq'
         ];
 
@@ -146,12 +148,18 @@ const App: React.FC = () => {
             )}
             <MarqueeIcons />
             
-            <AnimateOnScroll className="bentoGrid">
-                <BentoGrid />
-            </AnimateOnScroll>
+            
                         
             <AnimateOnScroll className="transportBlock">
                 <TransportBlock />
+            </AnimateOnScroll>
+            
+            <AnimateOnScroll className="teamBlock">
+                <TeamBlock 
+                    imageSrc="/public/heropic.jpg"
+                    title="Наша команда"
+                    subtitle="Профессионализм и забота"
+                />
             </AnimateOnScroll>
             
             <AnimateOnScroll className="advantagesBlock">
@@ -162,9 +170,6 @@ const App: React.FC = () => {
                 <TariffBlock />
             </AnimateOnScroll>
             
-            <AnimateOnScroll className="equip">
-                <Equip />
-            </AnimateOnScroll>
             
             <AnimateOnScroll className="testimonialsMarquee">
                 <TestimonialsMarquee />

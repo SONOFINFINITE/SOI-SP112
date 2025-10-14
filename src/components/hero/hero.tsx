@@ -25,17 +25,14 @@ export const Hero = ({ className }: HeroProps) => {
                     </div>
                 </div>
                 <div className={styles.div2}>
-                    <h2 className={classNames(styles.hero__text, styles.secondline)}>ЧАСТНАЯ</h2>
+                    <h2 className={classNames(styles.hero__text, styles.secondline)}> НЕЭКСТРЕННАЯ</h2>
                     <div className={styles.div3}>
                         <div className={styles.titleWithCross}>
-                            <h2 className={styles.hero__text}> СКОРАЯ ПОМОЩЬ</h2>
-                            <div className={styles.medCrossContainer}>
-                                <img src={heroCross} alt="3D Medical Cross" className={styles.medCross} />
-                            </div>
+                            <h2 className={styles.hero__text}> ПЕРЕВОЗКА</h2>
                         </div>
                         <div className={styles.div4}>
                             <p className={styles.p1}>
-                                Бригады врачей, реанимобили, кислород, мониторинг. Быстро, безопасно и официально.
+                               Экипаж: водитель + ассистент, автомобиль для перевозки лежачих пациентов. Быстро, безопасно и официально.
                             </p>
                         </div>
                     </div>
@@ -65,7 +62,7 @@ export const Hero = ({ className }: HeroProps) => {
                             </a>
                         </div>
                         <h2 className={classNames(styles.header1, styles.alignRight)}>
-                            ПЕРЕВОЗКА ПАЦИЕНТОВ <span style={{ color: '#1d4ed8' }}>24/7</span>
+                            ЛЕЖАЧИХ ПАЦИЕНТОВ <span style={{ color: '#1d4ed8' }}>24/7</span>
                         </h2>
                     </div>
                 </div>

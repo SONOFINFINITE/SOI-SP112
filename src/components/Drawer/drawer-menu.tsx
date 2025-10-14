@@ -86,17 +86,6 @@ export const DrawerMenu: React.FC<DrawerMenuProps> = ({ isOpen, onClose }) => {
                 <nav className={styles.drawer__nav}>
                     <ul>
                         <li>
-                            <a href="#services" onClick={(e) => {
-                                e.preventDefault();
-                                onClose();
-                                if (isCatalogPage) {
-                                    navigate('/', { state: { scrollToId: 'services' } });
-                                } else {
-                                    scrollToElement('#services', 1, 0);
-                                }
-                            }}>УСЛУГИ</a>
-                        </li>
-                        <li>
                             <a href="#benefits" onClick={(e) => {
                                 e.preventDefault();
                                 onClose();
@@ -117,17 +106,6 @@ export const DrawerMenu: React.FC<DrawerMenuProps> = ({ isOpen, onClose }) => {
                                     scrollToElement('#tariffs', 1, 0);
                                 }
                             }}>ТАРИФЫ</a>
-                        </li>
-                        <li>
-                            <a href="#equipment" onClick={(e) => {
-                                e.preventDefault();
-                                onClose();
-                                if (isCatalogPage) {
-                                    navigate('/', { state: { scrollToId: 'equipment' } });
-                                } else {
-                                    scrollToElement('#equipment', 1, 0);
-                                }
-                            }}>ОСНАЩЕНИЕ</a>
                         </li>
                         <li>
                             <a href="#reviews" onClick={(e) => {
