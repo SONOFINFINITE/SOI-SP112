@@ -66,7 +66,7 @@ export const ContactBlock: React.FC<ContactBlockProps> = ({ className }) => {
                 </button>
               </a>
               <a
-                href="https://wa.me/+79283001946"
+                href="https://t.me/+79283001946"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ textDecoration: 'none' }}

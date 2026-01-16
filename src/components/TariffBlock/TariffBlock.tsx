@@ -37,7 +37,7 @@ const TariffCard: React.FC<TariffCardProps> = ({ title, subtitle, price, feature
                     </li>
                 ))}
             </ul>
-            <a href="https://wa.me/+79283001946" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block' }}>
+            <a href="https://t.me/+79283001946" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block' }}>
                 <button className={styles.tariffButton}>Заказать</button>
             </a>
         </div>

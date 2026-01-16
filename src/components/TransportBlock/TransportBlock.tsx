@@ -43,11 +43,11 @@ export const TransportBlock: React.FC = () => {
             </div>
             
             <div className={styles.transportButtons}>
-              <a href="tel:+74951234567" className={`${styles.transportButton} ${styles.callButton}`}>
+              <a href="tel:+79283001946" className={`${styles.transportButton} ${styles.callButton}`}>
                 <FiPhone className={styles.buttonIcon} />
                 <span>Позвонить</span>
               </a>
-              <a href="https://wa.me/+79283001946" className={styles.transportButton}>
+              <a href="https://t.me/+79283001946" className={styles.transportButton}>
               <svg
                     width="24"
                     height="24"
