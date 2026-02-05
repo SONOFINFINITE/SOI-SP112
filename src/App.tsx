@@ -16,6 +16,7 @@ import { TransportBlock } from './components/TransportBlock/TransportBlock';
 import TeamBlock from './components/TeamBlock';
 import { Footer } from './components/Footer/footer';
 import { WhatsAppWidget } from './components/WhatsAppWidget/WhatsAppWidget';
+import { CallbackRequestForm } from './components/CallbackRequestForm/CallbackRequestForm';
 import { gsap } from 'gsap';
 import { animateElementsOnLoad } from './utils/gsapUtils';
 import { AnimateOnScroll } from './components/AnimateOnScroll/AnimateOnScroll';
@@ -177,6 +178,10 @@ const App: React.FC = () => {
             
             <AnimateOnScroll className="contactBlock">
                 <ContactBlock />
+            </AnimateOnScroll>
+
+            <AnimateOnScroll className="callbackRequestForm">
+                <CallbackRequestForm />
             </AnimateOnScroll>
         
             <AnimateOnScroll className="faq">
