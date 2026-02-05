@@ -82,7 +82,7 @@ export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ classN
   return (
     <div className={classNames(styles.container, className)} id="callback-request">
       <h2 className={styles.title}>Обратный звонок</h2>
-      <p className={styles.subtitle}>Оставьте контакты — мы перезвоним в ближайшее время.</p>
+      <p className={styles.subtitle}>Оставьте контакты — мы перезвоним в удобное для вас время.</p>
 
       <div className={styles.cardWrapper}>
         <div className={styles.card}>
@@ -124,14 +124,29 @@ export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ classN
               <label htmlFor="callback-datetime" className={styles.label}>
                 Когда позвонить
               </label>
-              <input
-                id="callback-datetime"
-                name="datetime"
-                type="datetime-local"
-                className={styles.input}
-                value={dateTime}
-                onChange={(e) => setDateTime(e.target.value)}
-              />
+              <div 
+                className={styles.datePickerWrapper}
+                onClick={() => {
+                  // Find the input within this wrapper and trigger its picker
+                  const input = document.getElementById('callback-datetime') as HTMLInputElement;
+                  if (input && 'showPicker' in input) {
+                    try {
+                      (input as any).showPicker();
+                    } catch (e) {
+                      // Fallback or ignore if not supported/allowed
+                    }
+                  }
+                }}
+              >
+                <input
+                  id="callback-datetime"
+                  name="datetime"
+                  type="datetime-local"
+                  className={styles.input}
+                  value={dateTime}
+                  onChange={(e) => setDateTime(e.target.value)}
+                />
+              </div>
             </div>
 
             <div className={styles.formGroup}>

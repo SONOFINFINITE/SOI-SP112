@@ -92,6 +92,34 @@
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.12);
 }
 
+.datePickerWrapper {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+.input[type="datetime-local"] {
+  cursor: pointer;
+}
+
+.input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+  opacity: 1; /* Make it fully visible (white) */
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+  font-family: inherit;
+}
+
 .formCheckbox {
   display: flex;
   align-items: center;
@@ -99,9 +127,39 @@
 }
 
 .checkbox {
-  width: 18px;
-  height: 18px;
-  accent-color: white;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.checkbox::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em white;
+  transform-origin: center;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  background-color: white;
+}
+
+.checkbox:checked {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: white;
+}
+
+.checkbox:checked::before {
+  transform: scale(1);
 }
 
 .checkboxLabel {
