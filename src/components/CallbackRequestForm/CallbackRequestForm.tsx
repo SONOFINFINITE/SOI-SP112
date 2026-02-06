@@ -12,8 +12,9 @@ const LAST_SUBMIT_KEY = 'callback_last_submit';
 
 export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ className }) => {
     const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
+    const [phone, setPhone] = useState('+7');
     const [dateTime, setDateTime] = useState('');
+    const [isDateFocused, setIsDateFocused] = useState(false);
     const [comment, setComment] = useState('');
     const [agreement, setAgreement] = useState(false);
     const [status, setStatus] = useState<Status>('idle');
@@ -22,7 +23,21 @@ export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ classN
         return `https://api.telegram.org/bot8526564376:AAGFcKY_GM4_ZYPYYpHQaBUkKopZDXailJA/sendMessage`;
     }, []);
 
-    const canSubmit = agreement && phone.trim().length > 0 && status !== 'sending';
+    const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        let val = e.target.value;
+        if (!val.startsWith('+7')) {
+            if (val.startsWith('7')) {
+                val = '+' + val;
+            } else if (val.startsWith('+')) {
+                val = '+7' + val.substring(1);
+            } else {
+                val = '+7' + val;
+            }
+        }
+        setPhone(val);
+    };
+
+    const canSubmit = agreement && phone.trim().length > 2 && status !== 'sending';
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -40,11 +55,13 @@ export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ classN
 
         let formattedTime = '';
         if (dateTime) {
-            const [datePart, timePart] = dateTime.split('T');
-            if (datePart && timePart) {
-                const [year, month, day] = datePart.split('-');
-                formattedTime = `${day}.${month}.${year} ${timePart}`;
+            // Handle YYYY-MM-DD format from type="date"
+            const parts = dateTime.split('-');
+            if (parts.length === 3) {
+                const [year, month, day] = parts;
+                formattedTime = `${day}.${month}.${year}`;
             } else {
+                // Fallback or previous logic if needed
                 formattedTime = dateTime;
             }
         }
@@ -124,7 +141,7 @@ export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ classN
                                 placeholder="+7 (___) ___-__-__"
                                 className={styles.input}
                                 value={phone}
-                                onChange={(e) => setPhone(e.target.value)}
+                                onChange={handlePhoneChange}
                                 autoComplete="tel"
                                 required
                             />
@@ -132,18 +149,20 @@ export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ classN
 
                         <div className={styles.formGroup}>
                             <label htmlFor="callback-datetime" className={styles.label}>
-                                Когда позвонить
+                                Когда позвонить (дата)
                             </label>
                             <div
                                 className={styles.datePickerWrapper}
                                 onClick={() => {
-                                    // Find the input within this wrapper and trigger its picker
                                     const input = document.getElementById('callback-datetime') as HTMLInputElement;
-                                    if (input && 'showPicker' in input) {
-                                        try {
-                                            (input as any).showPicker();
-                                        } catch (e) {
-                                            // Fallback or ignore if not supported/allowed
+                                    if (input) {
+                                        input.focus();
+                                        if ('showPicker' in input) {
+                                            try {
+                                                (input as any).showPicker();
+                                            } catch (e) {
+                                                // ignore
+                                            }
                                         }
                                     }
                                 }}
@@ -151,11 +170,18 @@ export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ classN
                                 <input
                                     id="callback-datetime"
                                     name="datetime"
-                                    type="datetime-local"
-                                    className={styles.input}
+                                    type="date"
+                                    className={classNames(styles.input, {
+                                        [styles.hasValue]: dateTime || isDateFocused
+                                    })}
                                     value={dateTime}
                                     onChange={(e) => setDateTime(e.target.value)}
+                                    onFocus={() => setIsDateFocused(true)}
+                                    onBlur={() => setIsDateFocused(false)}
                                 />
+                                {!dateTime && !isDateFocused && (
+                                    <span className={styles.datePlaceholder}>ДД.ММ.ГГГГ</span>
+                                )}
                             </div>
                         </div>
 
@@ -166,7 +192,7 @@ export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ classN
                             <textarea
                                 id="callback-comment"
                                 name="comment"
-                                placeholder="Удобно говорить после 18:00..."
+                                placeholder="Например: позвонить после 14:00 или вопрос по нашим услугам"
                                 className={classNames(styles.input, styles.textarea)}
                                 value={comment}
                                 onChange={(e) => setComment(e.target.value)}

@@ -57,6 +57,9 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .formGroup {
@@ -98,11 +101,16 @@
   cursor: pointer;
 }
 
-.input[type="datetime-local"] {
+.input[type="date"] {
   cursor: pointer;
+  color: transparent; /* Hide default date text when not focused/empty */
 }
 
-.input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+.input[type="date"].hasValue {
+  color: var(--MAIN-WHITE);
+}
+
+.input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
   cursor: pointer;
   opacity: 1; /* Make it fully visible (white) */
@@ -112,6 +120,17 @@
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
+}
+
+.datePlaceholder {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 16px;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .textarea {
