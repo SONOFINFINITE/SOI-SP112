@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
 import classNames from 'classnames';
 import styles from './CallbackRequestForm.module.scss';
 
@@ -13,11 +14,13 @@ const LAST_SUBMIT_KEY = 'callback_last_submit';
 export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ className }) => {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('+7');
+    const [phoneTouched, setPhoneTouched] = useState(false);
     const [dateTime, setDateTime] = useState('');
     const [isDateFocused, setIsDateFocused] = useState(false);
     const [comment, setComment] = useState('');
     const [agreement, setAgreement] = useState(false);
     const [status, setStatus] = useState<Status>('idle');
+    const [isClosing, setIsClosing] = useState(false);
 
     const endpoint = useMemo(() => {
         return `https://api.telegram.org/bot8526564376:AAGFcKY_GM4_ZYPYYpHQaBUkKopZDXailJA/sendMessage`;
@@ -25,6 +28,12 @@ export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ classN
 
     const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         let val = e.target.value;
+        
+        // Allow only digits, spaces, dashes, parentheses, and plus
+        if (!/^[0-9+\-\s()]*$/.test(val)) {
+            return;
+        }
+
         if (!val.startsWith('+7')) {
             if (val.startsWith('7')) {
                 val = '+' + val;
@@ -37,7 +46,12 @@ export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ classN
         setPhone(val);
     };
 
-    const canSubmit = agreement && phone.trim().length > 2 && status !== 'sending';
+    const isPhoneValid = useMemo(() => {
+        const digits = phone.replace(/\D/g, '');
+        return digits.length === 11 && digits.startsWith('7');
+    }, [phone]);
+
+    const canSubmit = agreement && isPhoneValid && status !== 'sending';
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -96,14 +110,22 @@ export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ classN
             setStatus('success');
             localStorage.setItem(LAST_SUBMIT_KEY, Date.now().toString());
             setName('');
-            setPhone('');
+            setPhone('+7');
+            setPhoneTouched(false);
             setDateTime('');
             setComment('');
             setAgreement(false);
-            window.setTimeout(() => setStatus('idle'), 2500);
         } catch {
             setStatus('error');
         }
+    };
+
+    const handleCloseModal = () => {
+        setIsClosing(true);
+        setTimeout(() => {
+            setStatus('idle');
+            setIsClosing(false);
+        }, 300);
     };
 
     return (
@@ -139,9 +161,12 @@ export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ classN
                                 name="phone"
                                 type="tel"
                                 placeholder="+7 (___) ___-__-__"
-                                className={styles.input}
+                                className={classNames(styles.input, {
+                                    [styles.inputError]: phoneTouched && !isPhoneValid
+                                })}
                                 value={phone}
                                 onChange={handlePhoneChange}
+                                onBlur={() => setPhoneTouched(true)}
                                 autoComplete="tel"
                                 required
                             />
@@ -229,6 +254,24 @@ export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ classN
                     </form>
                 </div>
             </div>
+
+            {status === 'success' && createPortal(
+                <div className={classNames(styles.modalOverlay, { [styles.exiting]: isClosing })} onClick={handleCloseModal}>
+                    <div className={classNames(styles.modalContent, { [styles.exiting]: isClosing })} onClick={(e) => e.stopPropagation()}>
+                        <div className={styles.modalIcon}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3 className={styles.modalTitle}>Заявка отправлена!</h3>
+                        <p className={styles.modalText}>Мы свяжемся с вами в ближайшее время для уточнения деталей.</p>
+                        <button className={styles.modalButton} onClick={handleCloseModal}>
+                            Отлично
+                        </button>
+                    </div>
+                </div>,
+                document.body
+            )}
         </div>
     );
 };
