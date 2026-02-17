@@ -12,6 +12,10 @@ type Status = 'idle' | 'sending' | 'success' | 'error';
 const LAST_SUBMIT_KEY = 'callback_last_submit';
 
 export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ className }) => {
+    // Telegram Configuration
+    const BOT_TOKEN = '';
+    const CHAT_ID = '';
+
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('+7');
     const [phoneTouched, setPhoneTouched] = useState(false);
@@ -23,8 +27,8 @@ export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ classN
     const [isClosing, setIsClosing] = useState(false);
 
     const endpoint = useMemo(() => {
-        return `https://api.telegram.org/bot8526564376:AAGFcKY_GM4_ZYPYYpHQaBUkKopZDXailJA/sendMessage`;
-    }, []);
+        return `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+    }, [BOT_TOKEN]);
 
     const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         let val = e.target.value;
@@ -93,7 +97,7 @@ export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ classN
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    chat_id: '1140402008',
+                    chat_id: CHAT_ID,
                     text: text,
                     parse_mode: 'HTML',
                     disable_web_page_preview: true
