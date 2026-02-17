@@ -12,7 +12,7 @@ type Status = 'idle' | 'sending' | 'success' | 'error';
 const LAST_SUBMIT_KEY = 'callback_last_submit';
 
 export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ className }) => {
-    // Telegram Configuration
+// ДАННЫЕ ТЕЛЕГРАММ БОТА И ЧАТА
     const BOT_TOKEN = '';
     const CHAT_ID = '';
 
@@ -33,7 +33,6 @@ export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ classN
     const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         let val = e.target.value;
         
-        // Allow only digits, spaces, dashes, parentheses, and plus
         if (!/^[0-9+\-\s()]*$/.test(val)) {
             return;
         }
@@ -61,7 +60,6 @@ export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ classN
         e.preventDefault();
         if (!canSubmit) return;
 
-        // Rate limit check (1 minute)
         const lastSubmit = localStorage.getItem(LAST_SUBMIT_KEY);
         if (lastSubmit) {
             const timeDiff = Date.now() - parseInt(lastSubmit, 10);
@@ -73,13 +71,11 @@ export const CallbackRequestForm: React.FC<CallbackRequestFormProps> = ({ classN
 
         let formattedTime = '';
         if (dateTime) {
-            // Handle YYYY-MM-DD format from type="date"
             const parts = dateTime.split('-');
             if (parts.length === 3) {
                 const [year, month, day] = parts;
                 formattedTime = `${day}.${month}.${year}`;
             } else {
-                // Fallback or previous logic if needed
                 formattedTime = dateTime;
             }
         }
